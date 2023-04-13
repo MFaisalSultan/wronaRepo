@@ -17,6 +17,11 @@ html {
   background-color: var(--primary-color-2);
   overflow-x: hidden;
   scroll-behavior: smooth;
+  /* overflow-y: hidden; */
+}
+
+html * {
+  overflow-y: hidden;
 }
 
 section {

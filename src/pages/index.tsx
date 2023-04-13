@@ -61,7 +61,6 @@ const Home: NextPage = () => {
   const [isPreorderOpen, setIsPreorderOpen] = useState(false);
   const [isFirefox, setIsFirefox] = useState(false);
 
-  
   useEffect(() => {
     setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
     if (window !== undefined) {
@@ -86,9 +85,8 @@ const Home: NextPage = () => {
   }, []);
 
   return (
+    <>
     <Container>
-    
-
       <div className="relative overflow-hidden">
         <section className="relative overflow-hidden">
           <video
@@ -182,19 +180,22 @@ const Home: NextPage = () => {
                 type="button"
                 className="primary-button mt-5 flex flex-row items-center justify-center gap-3 text-lg md:justify-start"
                 onClick={(event) => {
-                  event.preventDefault();
-                  var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-                  event.stopPropagation();
+                  // event.preventDefault();
+                  // var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                  // event.stopPropagation();
                   setIsPreorderOpen(true);
-                  console.log(scrollPosition);
-                  document.body.style.position = 'fixed';
-                  document.body.style.top = `-${scrollPosition}px`;
+                  // console.log(scrollPosition);
+                  // document.body.style.position = 'fixed';
+                  // document.body.style.top = `-${scrollPosition}px`;
                 }}
-             
               >
-                Pre-Order Now  <BsArrowRight />
+                Pre-Order Now <BsArrowRight />
               </button>
-              <Preorder isOpen={isPreorderOpen} setIsOpen={setIsPreorderOpen} />
+              {/* <Preorder
+                isOpen={isPreorderOpen}
+                setIsOpen={setIsPreorderOpen}
+                closeModal={() => setIsPreorderOpen(false)}
+              /> */}
             </span>
           </div>
         </section>
@@ -270,6 +271,31 @@ const Home: NextPage = () => {
         </footer>
       </div>
     </Container>
+      {/* {isPreorderOpen && (
+        <div className="fixed bottom-0 left-0 right-0 top-0 z-20 mx-auto block  " onScroll={e=>e.preventDefault()} >
+          <div className="fixed bottom-0 left-0 right-0 top-0 z-10 mx-auto block  bg-black bg-opacity-40"  onClick={() => setIsPreorderOpen(false)}>
+            <div className="absolute left-[50%] top-[50%] mx-auto block h-20 w-10/12 translate-x-[-50%] translate-y-[-50%]  bg-white">
+              <Preorder
+                isOpen={isPreorderOpen}
+                setIsOpen={setIsPreorderOpen}
+                closeModal={() => setIsPreorderOpen(false)}
+              />
+              </div>
+              </div>
+              </div>
+            )} */}
+            <Preorder
+              isOpen={isPreorderOpen}
+              setIsOpen={setIsPreorderOpen}
+              closeModal={() => setIsPreorderOpen(false)}
+            />
+      <style jsx global>{`
+          html {
+            overflow-y: ${isPreorderOpen ? "hidden" : "auto"};
+          }
+        `}</style>
+      </>
+      
   );
 };
 

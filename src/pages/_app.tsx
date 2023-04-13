@@ -1,5 +1,4 @@
 import { type AppType } from "next/app";
-
 import { api } from "@/utils/api";
 import { AnimatePresence } from "framer-motion";
 import { Toaster } from "react-hot-toast";
