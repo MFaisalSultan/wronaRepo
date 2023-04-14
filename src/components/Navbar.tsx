@@ -65,7 +65,7 @@ export default function Navbar() {
           isScrolled
             ? "bg-[#0E212D] shadow-md transition"
             : "border-b border-[#0FD99840]",
-          "fixed top-0 z-50 flex h-[79px] w-full flex-row items-center justify-between px-6 px-[22px] lg:px-[50px]"
+          "fixed top-0 z-40 flex h-[79px] w-full flex-row items-center justify-between px-6 px-[22px] lg:px-[50px]"
         )}
       >
         <Link href="/" className="flex items-center">
