@@ -82,6 +82,67 @@ export default function Preorder({
     });
   }
 
+  // return (
+  //   <Dialog
+  //     open={isOpen}
+  //     onClose={() => setIsOpen(false)}
+  //     className="relative z-50"
+  //   >
+  //     {/* The backdrop, rendered as a fixed sibling to the panel container */}
+  //     <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+  //     {/* Full-screen container to center the panel */}
+  //     <div className="fixed inset-0 flex items-center justify-center p-2">
+  //       {/* The actual dialog panel  */}
+  //       <Dialog.Panel className="bg-primary-2 mx-auto flex w-full  max-w-lg transform flex-col items-start overflow-hidden rounded bg-white p-10 text-left">
+  //         <Dialog.Title className="text-center text-xl font-medium leading-6 text-white 2xl:text-2xl">
+  //           Pre-order
+  //         </Dialog.Title>
+  //         <form
+  //           className="mt-4 flex w-full flex-col gap-y-2 p-1"
+  //           onSubmit={handleSubmit}
+  //         >
+  //           <input
+  //             required
+  //             name="name"
+  //             className="secondary-input"
+  //             placeholder="Name"
+  //             type="text"
+  //           />
+  //           <input
+  //             required
+  //             name="email"
+  //             className="secondary-input"
+  //             placeholder="Email"
+  //             type="email"
+  //           />
+  //           <input
+  //             required
+  //             name="quantity"
+  //             className="secondary-input"
+  //             placeholder="Quantity"
+  //             type="number"
+  //           />
+  //           <input
+  //             required
+  //             name="deliveryAddress"
+  //             className="secondary-input"
+  //             placeholder="Delivery Address"
+  //             type="text"
+  //           />
+  //           <textarea
+  //             required={false}
+  //             name="message"
+  //             placeholder="Message (optional)"
+  //             rows={5}
+  //           />
+  //           <button className="primary-button mt-2" type="submit">
+  //             Submit
+  //           </button>
+  //         </form>
+  //       </Dialog.Panel>
+  //     </div>
+  //   </Dialog>
+  // );
   return (
     <>
       {isOpen && (
@@ -92,59 +153,56 @@ export default function Preorder({
           <div
             className="fixed bottom-0 left-0 right-0 top-0 z-10 mx-auto block  bg-black bg-opacity-40"
             onClick={closeModal}
-          >
-          </div>
-            <div className="absolute z-10 left-[50%] top-[50%] mx-auto block  w-full translate-x-[-50%] translate-y-[-50%]  bg-white">
-              {/* <div className="flex min-h-full items-center justify-center text-center"> */}
-                <div className="bg-primary-2 flex w-full max-w-lg transform flex-col items-start overflow-hidden rounded p-10 text-left transition-all">
-                  <h1 className="text-center text-xl font-medium leading-6 text-white 2xl:text-2xl">
-                    Pre-order
-                  </h1>
-                  <form
-                    className="mt-4 flex w-full flex-col gap-y-2 p-1"
-                    onSubmit={handleSubmit}
-                  >
-                    <input
-                      required
-                      name="name"
-                      className="secondary-input"
-                      placeholder="Name"
-                      type="text"
-                    />
-                    <input
-                      required
-                      name="email"
-                      className="secondary-input"
-                      placeholder="Email"
-                      type="email"
-                    />
-                    <input
-                      required
-                      name="quantity"
-                      className="secondary-input"
-                      placeholder="Quantity"
-                      type="number"
-                    />
-                    <input
-                      required
-                      name="deliveryAddress"
-                      className="secondary-input"
-                      placeholder="Delivery Address"
-                      type="text"
-                    />
-                    <textarea
-                      required={false}
-                      name="message"
-                      placeholder="Message (optional)"
-                      rows={5}
-                    />
-                    <button className="primary-button mt-2" type="submit">
-                      Submit
-                    </button>
-                  </form>
-                </div>
-              {/* </div> */}
+          ></div>
+          <div className="absolute left-[50%] top-[50%] z-10  w-full landscape max-w-lg translate-x-[-50%] translate-y-[-50%]  bg-primary-2  overflow-y-scroll">
+            <div className="mx-auto flex w-full transform flex-col items-start rounded p-10 text-left ">
+              <h1 className="text-center text-xl font-medium leading-6 text-white 2xl:text-2xl">
+                Pre-order
+              </h1>
+              <form
+                className="mt-4 flex w-full flex-col gap-y-2 p-1"
+                onSubmit={handleSubmit}
+              >
+                <input
+                  required
+                  name="name"
+                  className="secondary-input"
+                  placeholder="Name"
+                  type="text"
+                />
+                <input
+                  required
+                  name="email"
+                  className="secondary-input"
+                  placeholder="Email"
+                  type="email"
+                />
+                <input
+                  required
+                  name="quantity"
+                  className="secondary-input"
+                  placeholder="Quantity"
+                  type="number"
+                />
+                <input
+                  required
+                  name="deliveryAddress"
+                  className="secondary-input"
+                  placeholder="Delivery Address"
+                  type="text"
+                />
+                <textarea
+                  required={false}
+                  name="message"
+                  placeholder="Message (optional)"
+                  rows={5}
+                />
+                <button className="primary-button mt-2" type="submit">
+                  Submit
+                </button>
+              </form>
             </div>
+          </div>
         </div>
       )}
     </>

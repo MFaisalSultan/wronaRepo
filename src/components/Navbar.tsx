@@ -94,8 +94,8 @@ export default function Navbar() {
             className="p-3 text-2xl text-gray-200 focus:outline-none"
           >
             <Image
-              width={35}
-              height={35}
+              width={24}
+              height={24}
               src="/static/assets/menu.svg"
               alt="Menu"
             />
@@ -120,8 +120,8 @@ export default function Navbar() {
                   className="p-3 text-2xl text-gray-100 transition hover:text-gray-300 focus:outline-none"
                 >
                   <Image
-                    width={35}
-                    height={35}
+                    width={24}
+                    height={24}
                     src="/static/assets/close.svg"
                     alt="Close"
                   />
@@ -190,6 +190,8 @@ export default function Navbar() {
         <style jsx global>{`
           html {
             overflow-y: ${isOpen ? "hidden" : "auto"};
+            scrollbar-width: ${isOpen ? "none" : "unset"};
+            -ms-overflow-style: ${isOpen ? "none" : "unset"};
           }
         `}</style>
       </nav>

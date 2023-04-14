@@ -41,6 +41,7 @@ export default function RootLayout(props: Props) {
         <link rel="canonical" href={`https://www.wrona.com${router.asPath}`} />
         <link rel="icon" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
         <meta name="theme-color" content="#0E212D" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@wrona" />
@@ -55,7 +56,7 @@ export default function RootLayout(props: Props) {
         <meta property="og:image" content="/favicon.png" />
         <meta property="manifest" content="/manifest.json" />
       </Head>
-      <main>
+      <main className="min-h-screen">
         <Navbar />
         {router.route !== "/" ? (
           <motion.div

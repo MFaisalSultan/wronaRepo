@@ -20,9 +20,16 @@ html {
   /* overflow-y: hidden; */
 }
 
-html * {
-  overflow-y: hidden;
-}
+/* body.dialog-open {
+  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-top: 0 !important;
+} */
+
+/* body.dialog-closed {
+  overflow: auto;
+} */
 
 section {
   scroll-margin-top: 79px;
@@ -54,7 +61,6 @@ textarea {
       rgba(15, 217, 152, 0.05) 50%
     );
 }
-
 .primary-button {
   @apply bg-primary rounded-3xl px-8 py-3 font-bold transition duration-300 ease-in-out;
   color: var(--primary-color-2);
@@ -197,4 +203,12 @@ textarea {
 
 .animate-leave {
   animation: leave 0.2s ease-in forwards;
+}
+
+@media only screen and (max-device-height: 480px) and (orientation: landscape) {
+  .landscape {
+    height: 340px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 }
