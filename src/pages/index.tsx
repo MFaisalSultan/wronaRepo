@@ -212,6 +212,7 @@ const Home: NextPage = () => {
                   type="button"
                   className="primary-button mt-5 flex flex-row items-center justify-center gap-3 text-lg md:justify-start"
                   onClick={(event) => {
+                    console.log('YES');
                   //   // event.preventDefault();
                   //   // var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
                   //   // event.stopPropagation();
