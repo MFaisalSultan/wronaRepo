@@ -84,6 +84,10 @@ const Home: NextPage = () => {
     }
   }, []);
 
+  const closeModal: () => void = () => {
+    setIsPreorderOpen(false);
+  };
+
   // Dialogue
   // function openDialog() {
   //   setIsPreorderOpen(true);
@@ -307,7 +311,7 @@ const Home: NextPage = () => {
       <Preorder
         isOpen={isPreorderOpen}
         setIsOpen={setIsPreorderOpen}
-        closeModal={() => setIsPreorderOpen(false)}
+        closeModal
       />
       <style jsx global>{`
         html {
