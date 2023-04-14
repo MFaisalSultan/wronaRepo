@@ -215,7 +215,7 @@ const Home: NextPage = () => {
                 <button
                   type="button"
                   className="primary-button mt-5 flex flex-row items-center justify-center gap-3 text-lg md:justify-start"
-                  onClick={(event) => {
+                  onClick={() => {
                     console.log('YES');
                   //   // event.preventDefault();
                   //   // var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -311,7 +311,7 @@ const Home: NextPage = () => {
       <Preorder
         isOpen={isPreorderOpen}
         setIsOpen={setIsPreorderOpen}
-        closeModal
+        closeModal={closeModal}
       />
       <style jsx global>{`
         html {

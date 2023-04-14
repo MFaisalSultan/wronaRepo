@@ -1,18 +1,16 @@
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import { api } from "@/utils/api";
 import Toast from "@/components/Toast";
+import { api } from "@/utils/api";
 import toast from "react-hot-toast";
 
 interface ModalProps {
   isOpen: boolean;
-  closeModal: any;
+  closeModal: () => void;
   setIsOpen: (isOpen: boolean) => void;
 }
 
 export default function Preorder({
   isOpen,
-  setIsOpen,
+  // setIsOpen,
   closeModal,
 }: ModalProps) {
   const { mutateAsync: addPreorder } = api.database.addPreorder.useMutation();
@@ -62,7 +60,7 @@ export default function Preorder({
             ));
           }
 
-          closeModal();
+          closeModal?.();
         })
         .catch((e) => {
           toast.custom((t) => (
@@ -154,7 +152,7 @@ export default function Preorder({
             className="fixed bottom-0 left-0 right-0 top-0 z-10 mx-auto block  bg-black bg-opacity-40"
             onClick={closeModal}
           ></div>
-          <div className="absolute left-[50%] top-[50%] z-10  w-full landscape max-w-lg translate-x-[-50%] translate-y-[-50%]  bg-primary-2  overflow-y-scroll">
+          <div className="landscape bg-primary-2 absolute left-[50%]  top-[50%] z-10 w-full max-w-lg translate-x-[-50%]  translate-y-[-50%]  overflow-y-scroll">
             <div className="mx-auto flex w-full transform flex-col items-start rounded p-10 text-left ">
               <h1 className="text-center text-xl font-medium leading-6 text-white 2xl:text-2xl">
                 Pre-order
