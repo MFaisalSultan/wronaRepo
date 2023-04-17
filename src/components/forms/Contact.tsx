@@ -74,7 +74,54 @@ export default function Contact({ isOpen, setIsOpen }: ModalProps) {
   }
 
   return (
-    <Transition appear show={isOpen} as={Fragment}>
+    <>
+      {isOpen && (
+        <div
+          className="fixed bottom-0 left-0 right-0 top-0 z-50 mx-auto block  "
+          onScroll={(e) => e.preventDefault()}
+        >
+          <div
+            className="fixed bottom-0 left-0 right-0 top-0 z-10 mx-auto block  bg-black bg-opacity-40"
+            onClick={closeModal}
+          ></div>
+          <div className="landscape bg-primary-2 absolute left-[50%]  top-[50%] z-10 w-full max-w-lg translate-x-[-50%]  translate-y-[-50%]  overflow-y-scroll">
+            <div className="mx-auto flex w-full transform flex-col items-start rounded p-10 text-left ">
+              <h1 className="text-center text-xl font-medium leading-6 text-white 2xl:text-2xl">
+                Contact
+              </h1>
+              <form
+                className="mt-4 flex w-full flex-col gap-y-2"
+                onSubmit={handleSubmit}
+              >
+                <input
+                  required
+                  name="name"
+                  className="secondary-input"
+                  placeholder="Name"
+                  type="text"
+                />
+                <input
+                  required
+                  name="email"
+                  className="secondary-input"
+                  placeholder="Email"
+                  type="email"
+                />
+                <textarea
+                  required
+                  name="message"
+                  placeholder="Message"
+                  rows={5}
+                />
+                <button className="primary-button mt-2" type="submit">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-[100]" onClose={closeModal}>
         <Transition.Child
           as={Fragment}
@@ -137,6 +184,7 @@ export default function Contact({ isOpen, setIsOpen }: ModalProps) {
           </div>
         </div>
       </Dialog>
-    </Transition>
+    </Transition> */}
+    </>
   );
 }

@@ -142,7 +142,7 @@ const Home: NextPage = () => {
               }}
               className="absolute left-0 top-0 z-[-1] h-full w-full object-cover object-[35%] lg:object-[20%] xl:object-center"
             >
-              <source src="/static/assets/bg-hero.mp4" type="video/mp4" />
+              <source src="/static/assets/bg-hero-4mb.mp4" type="video/mp4" />
             </video>
 
             {/* Fallback image */}
@@ -201,7 +201,7 @@ const Home: NextPage = () => {
             </div>
           </section>
 
-          <section>
+          <section id="pre-order">
             <div className="flex  h-[898px] w-full flex-col bg-[#ECECEC] px-[22px] py-[70px] md:h-[573px] md:justify-center md:px-[35px] md:py-0 lg:px-[50px] xl:h-[400px]">
               <span className="flex flex-col gap-y-5 md:w-3/4 md:items-start lg:w-full ">
                 <h3 className="color-secondary text-[39px] font-semibold leading-[46px] tracking-[0.1px] md:text-3xl md:leading-none lg:text-[39px]">

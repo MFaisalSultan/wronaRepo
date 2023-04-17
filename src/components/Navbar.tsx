@@ -94,7 +94,7 @@ export default function Navbar() {
             className="p-3 text-2xl text-gray-200 focus:outline-none"
           >
             <Image
-              width={24}
+              width={25}
               height={24}
               src="/static/assets/menu.svg"
               alt="Menu"
@@ -112,7 +112,7 @@ export default function Navbar() {
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               {/* Expandable menu */}
-              <div className="flex w-full items-center justify-between border-b border-[#0FD998]/25 px-8 py-6">
+              <div className="flex h-20 max-h-20 min-h-[80px] w-full items-center justify-between border-b border-[#0FD998]/25 px-[22px]">
                 {/* Close button */}
                 <span className="text-xl text-gray-100">Menu</span>
                 <button
@@ -120,8 +120,8 @@ export default function Navbar() {
                   className="p-3 text-2xl text-gray-100 transition hover:text-gray-300 focus:outline-none"
                 >
                   <Image
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
                     src="/static/assets/close.svg"
                     alt="Close"
                   />
