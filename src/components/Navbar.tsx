@@ -188,10 +188,12 @@ export default function Navbar() {
           )}
         </AnimatePresence>
         <style jsx global>{`
-          html {
+          html,body {
             overflow-y: ${isOpen ? "hidden" : "auto"};
             scrollbar-width: ${isOpen ? "none" : "unset"};
             -ms-overflow-style: ${isOpen ? "none" : "unset"};
+            touch-action:  ${isOpen ? "none" : "unset"};
+            -ms-touch-action:${isOpen ? "none" : "unset"};
           }
         `}</style>
       </nav>
