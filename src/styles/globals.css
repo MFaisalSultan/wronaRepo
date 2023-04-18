@@ -215,3 +215,15 @@ textarea {
     padding-bottom: 15px;
   }
 }
+
+.arrowDButton:hover{
+  background-color: #0fd998;
+  color: #fff;
+
+}
+@media (hover: none) {
+  .arrowDButton:hover {
+    background-color: transparent;
+    color: #0fd998;
+  }
+}

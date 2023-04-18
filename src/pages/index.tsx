@@ -16,9 +16,10 @@ const Home: NextPage = () => {
   const [isFirefox, setIsFirefox] = useState(false);
 
 
-  const scrollTo = (e: React.MouseEvent) => {
+
+  const scrollTo = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
-    const section = document.getElementById('preOrder');
+    const section = document.getElementById(id);
     if (section) {
       window.scrollTo({
         top: section.offsetTop - 50,
@@ -66,7 +67,7 @@ const Home: NextPage = () => {
           of mind. <br /> <br />
           <strong>
           
-            <span onClick={(e) =>(scrollTo(e))} className="text-blue-500 underline cursor-pointer">
+            <span onClick={(e) =>(scrollTo(e, 'preOrder'))} className="text-blue-500 underline cursor-pointer">
               Upgrade
             </span>
           
@@ -183,8 +184,8 @@ const Home: NextPage = () => {
                   Flying <br /> Robotics
                   <span className="color-primary">.</span>
                 </h1>
-                <a href="#about">
-                  <button className="border-primary color-primary flex h-[50px] w-[50px] items-center justify-center rounded-full border transition-all duration-300 ease-in-out hover:bg-[#0fd998] hover:text-white focus:bg-[#0caf7b]">
+                <a href="#about" >
+                  <button className="border-primary color-primary flex h-[50px] w-[50px] items-center justify-center rounded-full border transition-all duration-300 ease-in-out arrowDButton focus:bg-[#0caf7b]">
                     <AiOutlineArrowDown className="text-xl" />
                   </button>
                 </a>
