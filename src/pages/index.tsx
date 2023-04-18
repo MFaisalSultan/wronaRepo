@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   const [isFirefox, setIsFirefox] = useState(false);
 
 
-  const scrollTo = (e) => {
+  const scrollTo = (e: React.MouseEvent) => {
     e.preventDefault();
     const section = document.getElementById('preOrder');
     if (section) {
