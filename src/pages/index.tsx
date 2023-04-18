@@ -8,65 +8,83 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Preorder from "@/components/forms/Preorder";
 
-const features = [
-  {
-    title: "Autonomous security is possible",
-    description: (
-      <p className="text-base leading-6 tracking-[0.1px]">
-        ENERI combines nature and technology into a modern, versatile IoT
-        device. Our security device is designed like a crow with robotic claws
-        and legs for easy takeoff and landing. We installed a durable,
-        high-quality camera in the head of the bird to give you an{" "}
-        <strong>eagle-eye view of your business or home.</strong> <br /> <br />{" "}
-        Not only does ENERI provide security and peace of mind, but it’s also a
-        great way to keep children entertained as they fly it around the
-        backyard, soaring and exploring.
-      </p>
-    ),
-  },
-  {
-    title: "It’s a bird; it’s a plane… it’s ENERI",
-    description: (
-      <p className="text-base leading-6 tracking-[0.1px]">
-        In autopilot mode, ENERI flies on its own, patrolling your property
-        while you relax. Autopilot assistance provides security and convenience,
-        taking the hassle out of personal protection. <br />
-        <br />{" "}
-        <strong>You can turn autopilot off and fly the device manually.</strong>
-      </p>
-    ),
-  },
-  {
-    title: "With ENERI, the possibilities are endless",
-    description: (
-      <p className="text-base leading-6 tracking-[0.1px]">
-        ENERI is made with only the highest-quality materials for a product that
-        will last through the years. We guarantee our product is as durable as
-        it is safe and secure. Even your children can operate ENERI without
-        damaging it. Outdated security protocols cost you time, money, and peace
-        of mind. <br /> <br />
-        <strong>
-          <a href="#pre-order" className="text-blue-500 underline">
-            Upgrade
-          </a>{" "}
-          with ENERI and experience the future at your fingertips.
-        </strong>
-      </p>
-    ),
-  },
-];
+
 
 const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isPreorderOpen, setIsPreorderOpen] = useState(false);
   const [isFirefox, setIsFirefox] = useState(false);
 
+
+  const scrollTo = (e) => {
+    e.preventDefault();
+    const section = document.getElementById('preOrder');
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 50,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const features = [
+    {
+      title: "Autonomous security is possible",
+      description: (
+        <p className="text-base leading-6 tracking-[0.1px]">
+          ENERI combines nature and technology into a modern, versatile IoT
+          device. Our security device is designed like a crow with robotic claws
+          and legs for easy takeoff and landing. We installed a durable,
+          high-quality camera in the head of the bird to give you an{" "}
+          <strong>eagle-eye view of your business or home.</strong> <br /> <br />{" "}
+          Not only does ENERI provide security and peace of mind, but it’s also a
+          great way to keep children entertained as they fly it around the
+          backyard, soaring and exploring.
+        </p>
+      ),
+    },
+    {
+      title: "It’s a bird; it’s a plane… it’s ENERI",
+      description: (
+        <p className="text-base leading-6 tracking-[0.1px]">
+          In autopilot mode, ENERI flies on its own, patrolling your property
+          while you relax. Autopilot assistance provides security and convenience,
+          taking the hassle out of personal protection. <br />
+          <br />{" "}
+          <strong>You can turn autopilot off and fly the device manually.</strong>
+        </p>
+      ),
+    },
+    {
+      title: "With ENERI, the possibilities are endless",
+      description: (
+        <p className="text-base leading-6 tracking-[0.1px]">
+          ENERI is made with only the highest-quality materials for a product that
+          will last through the years. We guarantee our product is as durable as
+          it is safe and secure. Even your children can operate ENERI without
+          damaging it. Outdated security protocols cost you time, money, and peace
+          of mind. <br /> <br />
+          <strong>
+          
+            <span onClick={(e) =>(scrollTo(e))} className="text-blue-500 underline cursor-pointer">
+              Upgrade
+            </span>
+          
+            {" "}
+            with ENERI and experience the future at your fingertips.
+          </strong>
+        </p>
+      ),
+    },
+  ];
   // useEffect(() => {
   //   setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
   //   if (window !== undefined) {
   //     setIsFirefox(navigator.userAgent.indexOf("Firefox") !== -1);
   //   }
   // }, []);
+
+
 
   useEffect(() => {
     const videoElement = document.getElementById("vid") as HTMLVideoElement;
@@ -160,7 +178,7 @@ const Home: NextPage = () => {
                 isMobile && isFirefox && "h-screen"
               )}
             >
-              <span className="flex flex-col items-start space-y-6">
+              <span className="flex flex-col items-start space-y-6 mb-6">
                 <h1 className="text-6xl font-semibold text-white lg:leading-[4.438rem]">
                   Flying <br /> Robotics
                   <span className="color-primary">.</span>
@@ -201,7 +219,7 @@ const Home: NextPage = () => {
             </div>
           </section>
 
-          <section id="pre-order">
+          <section id="preOrder">
             <div className="flex  h-[898px] w-full flex-col bg-[#ECECEC] px-[22px] py-[70px] md:h-[573px] md:justify-center md:px-[35px] md:py-0 lg:px-[50px] xl:h-[400px]">
               <span className="flex flex-col gap-y-5 md:w-3/4 md:items-start lg:w-full ">
                 <h3 className="color-secondary text-[39px] font-semibold leading-[46px] tracking-[0.1px] md:text-3xl md:leading-none lg:text-[39px]">
