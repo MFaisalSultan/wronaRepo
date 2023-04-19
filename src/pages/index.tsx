@@ -14,6 +14,7 @@ const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isPreorderOpen, setIsPreorderOpen] = useState(false);
   const [isFirefox, setIsFirefox] = useState(false);
+  const videoRef = useRef(null);
 
 
 
@@ -89,6 +90,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     const videoElement = document.getElementById("vid") as HTMLVideoElement;
+    console.log('loaded')
     videoElement.setAttribute("playsinline", "true");
 
     if (videoElement) {
@@ -102,6 +104,15 @@ const Home: NextPage = () => {
       });
     }
   }, []);
+
+  const handleVideoCanPlayThrough = () => {
+    
+    if (videoRef.current) {
+      // console.log('loaded2')
+      videoRef.current?.play();
+      // console.log('loaded3')
+    }
+  };
 
   const closeModal: () => void = () => {
     setIsPreorderOpen(false);
@@ -151,6 +162,9 @@ const Home: NextPage = () => {
               loop
               playsInline
               preload="auto"
+              ref={videoRef}
+              onCanPlayThrough={handleVideoCanPlayThrough}
+
               style={{
                 width: "100%",
                 minWidth: "100%",
