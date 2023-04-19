@@ -63,7 +63,7 @@ const Home: NextPage = () => {
           ENERI is made with only the highest-quality materials for a product that
           will last through the years. We guarantee our product is as durable as
           it is safe and secure. Even your children can operate ENERI without
-          damaging it. Outdated security protocols cost you time, money, and peace
+          damaging it.<br /> <br /> Outdated security protocols cost you time, money, and peace
           of mind. <br /> <br />
           <strong>
           

@@ -127,9 +127,9 @@ export default function Navbar() {
                   />
                 </button>
               </div>
-              <div className="flex h-full flex-col items-start justify-between overflow-y-auto">
+              <div className="flex h-full flex-col items-start justify-between menuScroll overflow-y-auto">
                 {/* Links */}
-                <div className="flex w-full flex-col items-start space-y-6 px-8 py-12">
+                <div className="flex w-full flex-col items-start space-y-6 px-8 py-12 min-h-fit">
                   {isOpen && <NavItem href="/" label="Home" isOpen={isOpen} />}
                   <NavItem href={"/about"} label={"About"} isOpen={isOpen} />
                   <button
@@ -141,7 +141,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Footer */}
-                <div className="flex w-full flex-col space-y-8 px-8 py-12">
+                <div className="flex w-full flex-col space-y-8 px-8 py-12 min-h-fit">
                   <Image
                     src="/static/assets/logo.svg"
                     alt="Logo"

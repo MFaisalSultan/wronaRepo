@@ -20,6 +20,18 @@ html {
   /* overflow-y: hidden; */
 }
 
+.menuScroll::-webkit-scrollbar {
+  width: 2px;
+}
+ 
+.menuScroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.menuScroll::-webkit-scrollbar-thumb {
+  background-color: #e5e7eb;
+  /* outline: 2px solid red; */
+}
 /* body.dialog-open {
   overflow: hidden;
   scrollbar-width: none;
