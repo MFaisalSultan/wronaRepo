@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isPreorderOpen, setIsPreorderOpen] = useState(false);
   const [isFirefox, setIsFirefox] = useState(false);
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
 
 
@@ -106,13 +106,15 @@ const Home: NextPage = () => {
   }, []);
 
   const handleVideoCanPlayThrough = () => {
-    
     if (videoRef.current) {
-      // console.log('loaded2')
-      videoRef.current?.play();
-      // console.log('loaded3')
+      console.log('inside IF')
+      videoRef.current?.play().catch(error => {
+        console.log('Error occurred while trying to play video:', error);
+      });
     }
+    console.log('outside IF')
   };
+  
 
   const closeModal: () => void = () => {
     setIsPreorderOpen(false);
