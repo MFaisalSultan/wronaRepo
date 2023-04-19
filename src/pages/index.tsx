@@ -150,6 +150,7 @@ const Home: NextPage = () => {
               muted
               loop
               playsInline
+              preload="auto"
               style={{
                 width: "100%",
                 minWidth: "100%",
